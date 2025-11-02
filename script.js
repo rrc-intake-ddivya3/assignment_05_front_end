@@ -15,10 +15,23 @@ async function fetchTreeData(treeName){
         }
 
         const data = await response.json();
-        console.log(data);
+        console.log("Fetched data:", data);
 
+        // Parse and display the data
         const resultsDiv = document.getElementById('results');
         resultsDiv.innerHTML = ''; // Clear previous results
     }
+
+    catch(error){
+        console.error("Error fetching data:", error);
+        document.getElementById('results').innerText = 'An error occurred while fetching data.';
+    
+    }
+
+    // Event listener for search button
+    document.getElementById('searchButton').addEventListener('click', () => {
+        const treeNameInput = document.getElementById('treeNameInput').value;
+        fetchTreeData(treeNameInput);
+    });
 
 } 
