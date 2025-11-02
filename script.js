@@ -27,11 +27,10 @@ async function fetchTreeData(treeName){
         document.getElementById('results').innerText = 'An error occurred while fetching data.';
     
     }
-
-    // Event listener for search button
-    document.getElementById('searchButton').addEventListener('click', () => {
-        const treeNameInput = document.getElementById('treeNameInput').value;
-        fetchTreeData(treeNameInput);
-    });
-
 } 
+
+// Event listener for search button
+document.getElementById('searchButton').addEventListener('click', () => {
+    const treeNameInput = document.getElementById('treeNameInput').value.trim();
+    fetchTreeData(treeNameInput);   
+});
