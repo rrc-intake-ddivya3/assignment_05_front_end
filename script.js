@@ -1,7 +1,15 @@
-// Divya Sharma
+// script.js
 
-let commonName = '';
-const apiUrl = 'https://data.winnipeg.ca/api/v3/views/hfwk.json' + 
-    `$where = commonname='${commonName}%'` + '&$order=diametre_at_breast_height DESC' + '&$limit=100';
+const treeName = ''; // input from user
+const apiUrl = `https://data.winnipeg.ca/api/v3/views/hfwk-jp4h/query.json?$where=commonname='${treeName}%'&$order=diametre_at_breast_height DESC&$limit=100`;
 
-const encodedURL = encodeURI(apiUrl);
+async function fetchTreeData(treeName){
+    const apiUrl = `https://data.winnipeg.ca/api/v3/views/hfwk-jp4h/query.json?$where=commonname='${treeName}%'&$order=diametre_at_breast_height DESC&$limit=100`;
+    try{
+        const response = await fetch(apiUrl);
+        if(!response.ok){
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    }
+
+} 
