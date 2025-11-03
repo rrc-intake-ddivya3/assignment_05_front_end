@@ -2,7 +2,7 @@
 console.log("Script loaded successfully.");
 
 async function fetchTreeData(treeName){
-    const apiUrl = `https://data.winnipeg.ca/resource/hfwk-jp4h.json?$where=lower(common_name) like lower('%${treeName}%')&$order=diametre_at_breast_height DESC&$limit=100`;
+    const apiUrl = `https://data.winnipeg.ca/resource/hfwk-jp4h/query.json?$where=lower(common_name) like lower('%${treeName}%')&$order=diametre_at_breast_height DESC&$limit=100`;
     try{
         // GET request to the API
         const response = await fetch(apiUrl);
