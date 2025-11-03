@@ -1,4 +1,5 @@
 // script.js
+document.addEventListener('DOMContentLoaded', () => {
 console.log("Script loaded successfully.");
 
 async function fetchTreeData(treeName){
@@ -46,4 +47,5 @@ document.getElementById('searchButton').addEventListener('click', () => {
     } else {
         document.getElementById('results').innerText = 'Please enter a tree name.';
     }
+});
 });
